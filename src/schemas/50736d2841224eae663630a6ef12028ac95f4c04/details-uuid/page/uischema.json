@@ -1,0 +1,10 @@
+{
+  "type": "CampaignsLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "scope": "#/properties/details-page",
+      "label": "Details"
+    }
+  ]
+}

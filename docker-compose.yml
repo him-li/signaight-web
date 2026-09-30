@@ -1,0 +1,19 @@
+version: "3"
+
+secrets:
+  aws_creds:
+    file: ~/.aws
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: signaight-fe
+    restart: always
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - 3000:3000

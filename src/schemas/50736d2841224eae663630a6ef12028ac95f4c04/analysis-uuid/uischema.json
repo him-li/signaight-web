@@ -1,0 +1,15 @@
+{
+  "type": "MainLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "scope": "#/properties/navbar",
+      "label": "Navbar"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/analysis-page",
+      "label": "Analysis"
+    }
+  ]
+}

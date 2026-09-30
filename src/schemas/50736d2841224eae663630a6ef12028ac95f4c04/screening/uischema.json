@@ -1,0 +1,10 @@
+{
+  "type": "MainLayout",
+  "elements": [
+    {
+      "type": "Control",
+      "scope": "#/properties/screening-page",
+      "label": "Screening"
+    }
+  ]
+}
