@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import { productName, sortingStrings } from "@/constants";
 import GetPersonsWrapper from "@/components/blocks/servers/GetPersonsWrapper/GetPersonsWrapper";
 import { SEARCH_PERSONS_COUNT } from "@/constants/search";
-import JsonSchemaWrapper from "@/components/blocks/servers/JsonSchemaWrapper/JsonSchemaWrapper";
 import PersonTableWrapper from "@/components/blocks/signaight/PersonTableWrapper/PersonTableWrapper";
 import LoadingProgress from "@/components/atoms/LoadingProgress";
 import RiskmatrixWidgets from "@/components/blocks/signaight/RistmatrixWidgets";
 import { ALL_PROJECTS } from "@/constants/projects";
+import RiskMatrixPage from "@/components/pages/RiskMatrixPage";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +20,6 @@ export default async function PersonsPage(props: {
   params: { lang: string; campaignId: string };
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const { lang } = await props.params;
   const search = await props.searchParams;
   const projectId = typeof search?.it === "string" ? search.it : undefined;
   return (
@@ -34,7 +33,7 @@ export default async function PersonsPage(props: {
           {projectId && projectId !== ALL_PROJECTS ? (
             <RiskmatrixWidgets projectId={projectId} />
           ) : null}
-          <JsonSchemaWrapper lang={lang} type="page" template="riskmatrix" />
+          <RiskMatrixPage />
         </PersonTableWrapper>
       </GetPersonsWrapper>
     </Suspense>

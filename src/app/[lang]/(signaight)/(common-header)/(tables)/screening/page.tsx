@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { productName, sortingStrings } from "@/constants";
 import { SEARCH_PERSONS_COUNT } from "@/constants/search";
 import GetPersonsWrapper from "@/components/blocks/servers/GetPersonsWrapper/GetPersonsWrapper";
-import JsonSchemaWrapper from "@/components/blocks/servers/JsonSchemaWrapper/JsonSchemaWrapper";
 import PersonTableWrapper from "@/components/blocks/signaight/PersonTableWrapper/PersonTableWrapper";
 import LoadingProgress from "@/components/atoms/LoadingProgress";
+import ScreeningPage from "@/components/pages/ScreeningPage";
 
 export const metadata: Metadata = {
   title: `${productName} - Screening`,
@@ -16,7 +16,6 @@ export default async function Screening(props: {
   params: { lang: string; campaignId: string };
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const { lang } = await props.params;
   return (
     <Suspense
       fallback={
@@ -34,7 +33,7 @@ export default async function Screening(props: {
         ]}
       >
         <PersonTableWrapper>
-          <JsonSchemaWrapper lang={lang} type="page" template="screening" />
+          <ScreeningPage />
         </PersonTableWrapper>
       </GetPersonsWrapper>
     </Suspense>

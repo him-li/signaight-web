@@ -1,7 +1,7 @@
 import PersonTableWrapper from "@/components/blocks/signaight/PersonTableWrapper/PersonTableWrapper";
-import JsonSchemaWrapper from "@/components/blocks/servers/JsonSchemaWrapper/JsonSchemaWrapper";
 import { searchPersonsQuery } from "@/constants/search";
 import PersonProvider from "@/contexts/personContext/PersonContext";
+import RiskMatrixPage from "@/components/pages/RiskMatrixPage";
 
 export default function Loading() {
   return (
@@ -12,7 +12,7 @@ export default function Loading() {
       loading={true}
     >
       <PersonTableWrapper>
-        <JsonSchemaWrapper lang={"en"} type="page" template="riskmatrix" />
+        <RiskMatrixPage />
       </PersonTableWrapper>
     </PersonProvider>
   );

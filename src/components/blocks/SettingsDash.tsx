@@ -1,3 +1,5 @@
+"use client";
+
 import { Tabs, Tab, Card } from "@heroui/react";
 import Profile from "./settings/Profile";
 import Password from "./settings/Password";
